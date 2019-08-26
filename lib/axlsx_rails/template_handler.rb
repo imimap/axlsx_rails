@@ -11,7 +11,7 @@ module ActionView
         Rails.version.to_f >= 5 ? Mime[:xlsx] : Mime::XLSX
       end
 
-      def call(template)
+      def call(template, source)
         builder = StringIO.new
         builder << "require 'axlsx';"
         builder << "xlsx_author = defined?(xlsx_author).nil? ? nil : xlsx_author;"
